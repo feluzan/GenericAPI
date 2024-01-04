@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
-	"name": "Java",
+	"name": "GenericAPI",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/java:0-17",
 	"features": {
@@ -12,15 +12,40 @@
 		}
 	},
 	"customizations": {
-		"vscode": {
-			"extensions": [
-				"vscjava.vscode-java-pack",
+        "vscode": {
+            // Set default container specific settings.json values on container create.
+            "settings": {
+                "java.compile.nullAnalysis.mode": "automatic",
+                "java.configuration.updateBuildConfiguration": "automatic",
+                "java.debug.settings.onBuildFailureProceed": true,
+                "spring.profiles.active": "dev",
+                "files.trimTrailingWhitespace": true,
+                "editor.trimAutoWhitespace": true,
+                "editor.insertSpaces": true,
+                "editor.tabSize": 4,
+                "[java]": {
+                    "editor.detectIndentation": false,
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    }
+                }
+            },
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "eamodio.gitlens", // GitLens
+                "vscjava.vscode-java-pack", // Extension Pack for Java
+                "vscjava.vscode-spring-boot-dashboard", // Spring Boot Dashboard
+                "mhutchie.git-graph", // Git Graph
+                "Cardinal90.multi-cursor-case-preserve", //case preserve for multiple cursors
+                "Gruntfuggly.todo-tree", //TODO list
+                "maptz.regionfolder",// region folder
+                "vmware.vscode-spring-boot", //springboot tools
 				"DotJoshJohnson.xml",
 				"DavidAnson.vscode-markdownlint",
 				"github.vscode-github-actions"
-			]
-		}
-	}
+            ]
+        }
+    }
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
