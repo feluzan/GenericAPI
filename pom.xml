@@ -18,7 +18,7 @@
 
 	<name>GenericAPI</name>
 	<description>A API for Springboot</description>
-	
+
 	<!-- FIXME replace www.example.com-->
 	<url>http://www.example.com</url>
 
@@ -29,12 +29,13 @@
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<maven.compiler.release>${java.version}</maven.compiler.release>
 		<junit>5.8.2</junit>
+		<skipTests>true</skipTests>
 
 		<!-- Plugin versions -->
 		<maven.shade>3.5.1</maven.shade>
 		<maven.clean>3.1.0</maven.clean>
 		<maven.resources>3.1.0</maven.resources>
-		<maven.compiler>3.8.1</maven.compiler>
+		<maven.compiler>3.10.1</maven.compiler>
 		<maven.surefire>3.0.0-M5</maven.surefire>
 		<maven.jar>3.2.0</maven.jar>
 		<maven.install>3.0.0-M1</maven.install>
@@ -57,11 +58,67 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.16.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>2.16.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.16.1</version>
+		</dependency>
+
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+		<dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.14.0</version>
+		</dependency>
+
+
+
+
 
 
 		<!-- Testing dependencies-->
@@ -85,14 +142,12 @@
 		</dependency>
 	</dependencies>
 
-	<licenses>
+	<!-- <licenses>
 		<license>
-			<!-- FIXME replace with the name of your LICENSE -->
 			<name>Apache-2.0 License</name>
-			<!-- FIXME replace with the to your LICENSE url -->
-			<url>https://github.com/MathieuSoysal/Java-Maven-library-template/blob/master/LICENSE</url>
+			<url></url>
 		</license>
-	</licenses>
+	</licenses> -->
 
 	<developers>
 		<developer>
@@ -240,7 +295,7 @@
 				<artifactId>maven-install-plugin</artifactId>
 				<version>3.1.1</version>
 			</plugin>
-			<plugin>
+			<!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
 				<version>${maven.shade}</version>
@@ -259,7 +314,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.7.1</version>
